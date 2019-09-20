@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Wish List</h1>
+{% for wish in wishs %}
+            <table class="pure-table">
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Number</th>
+                        <th>Delete?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ wish.description}}</td>
+                        <td>{{ wish.quantity}}</td>
+                        <td><a href="{%url 'wishs_delete' wish.id%}">X</a></td>
+                    </tr>
+            </table>
+{% endfor %}
+{% endblock %}
