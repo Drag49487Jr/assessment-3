@@ -2,6 +2,7 @@
 
 {% block content %}
 <h1>Wish List</h1>
+{% if wish_counter > 0%}
 {% for wish in wishs %}
             <table class="pure-table">
                 <thead>
@@ -19,4 +20,9 @@
                     </tr>
             </table>
 {% endfor %}
+{% else %}
+<div>
+    <h1>Wish Doesn't Exist</h1>
+</div>
+{% endif %}
 {% endblock %}
